@@ -1,0 +1,181 @@
+/* CSS for navigation bar */
+#navigationBar {
+  width: 100%;
+  padding: 15px 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-left {
+  display: flex;
+  align-items: center;
+  flex-basis: 40%;
+  /* flex: 1 1 40%; */
+}
+
+#nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-basis: 40%;
+  /* flex: 1 1 35%; */
+}
+
+#nav-right {
+  display: flex;
+  align-items: center;
+  flex-basis: 20%;
+  /* flex: 1 1 25%; */
+}
+
+#userNotLogin, #userLogged {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* CSS for under line when nav item is selected */
+
+#navigationBar a {
+  text-decoration: none;
+}
+
+#appTitle {
+  margin-left: 20px;
+  color: #5A9D49;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+/* CSS for search input feature */
+#contain-search-feature {
+  margin-left: 50px;
+  position: relative;
+}
+
+#searchInput {
+  padding: 14px 20px;
+  padding-right: 30px;
+  background-color: #F8EFEF;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+#searchInput:focus {
+  box-shadow: 0 0 10px rgba(90, 157, 73, 0.5);
+  outline: 2px solid #5A9D49;
+}
+
+.fa-solid.fa-magnifying-glass {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  font-size: 20px;
+  color: #5A9D49
+}
+
+/* CSS for admin feature link */
+.admin-fe-link {
+  display: inline-block;
+  color: #7a5959;
+  font-weight: 600;
+  /* display: none; */
+  position: relative;
+}
+
+.admin-fe-link:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  border-radius: 10px;
+  height: 4px;
+  background-color: #5A9D49;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.admin-fe-link.under-line-active:after {
+  transform: scaleX(1);
+}
+
+/* CSS for vertical line */
+#verticalLine {
+  height: 40px;
+  width: 4px;
+  border-radius: 4px;
+  background-color: #5A9D49;
+}
+
+/* CSS for button when user is not login */
+#userNotLogin {
+  display: flex;
+}
+
+.nav-button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.nav-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all linear 0.2s;
+}
+
+#btnLogin {
+  background-color: #5A9D49;
+}
+
+#btnSignUp {
+  background-color: #2C2C2C;
+}
+
+/* CSS when user is logged  */
+#userLogged {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contain-icon-fullname {
+  display: flex;
+  align-items: center;
+}
+
+.contain-icon-fullname #fullName {
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+
+#contain-user-icon {
+  border: 2px solid #5A9D49;
+  border-radius: 100%;
+}
+
+.fa-regular.fa-user {
+  padding: 10px;
+  color: #5A9D49;
+  font-weight: bold;
+}
+
+#fullName {
+  font-weight: 600;
+}
+
+#btnLogout {
+  background-color: #2C2C2C;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 10px;
+}

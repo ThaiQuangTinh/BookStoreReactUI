@@ -1,0 +1,120 @@
+/* Overlay hiệu ứng mờ dần khi xuất hiện */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeInBackground 0.3s ease forwards; /* Thêm hiệu ứng fade in */
+}
+
+/* Popup content với hiệu ứng trượt và mờ */
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60vw;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInPopup 0.4s ease forwards; /* Hiệu ứng fade in khi xuất hiện */
+    transform: scale(0.9); /* Bắt đầu với kích thước nhỏ hơn */
+    opacity: 0; /* Bắt đầu với độ mờ */
+}
+
+.edit-book-form-title {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 35px;
+    color: #5A9D49;
+    font-weight: bold;
+}
+
+.input-list input:focus {
+    border: none;
+    box-shadow: 0 0 10px rgba(90, 157, 73, 0.5);
+    outline: 2px solid #5A9D49;
+}
+
+.popup-content .input-list {
+    margin-bottom: 10px;
+    /* display: flex; */
+    display: flex;
+    flex-wrap: nowrap !important;
+    justify-content: space-evenly;
+}
+
+/* Keyframes cho hiệu ứng fade-in của nền (background overlay) */
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Keyframes cho hiệu ứng fade-in của popup */
+@keyframes fadeInPopup {
+    0% {
+        transform: scale(0.9); /* Popup xuất hiện nhỏ */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1); /* Popup trở lại kích thước bình thường */
+        opacity: 1;
+    }
+}
+
+/* Keyframes cho hiệu ứng fade-out nếu bạn cần (nếu muốn hiệu ứng đóng popup) */
+@keyframes fadeOutPopup {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
+/* Các style form như ban đầu */
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button[type='submit'] {
+    margin-left: 50px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5A9D49;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+form button[type="button"] {
+    background-color: #a89c9c;
+}
+
+form button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all linear 0.3s;
+}

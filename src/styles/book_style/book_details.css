@@ -1,0 +1,45 @@
+/* CSS for book details */
+.contain-book-details {
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.book-details {
+    max-width: 750px;
+    padding: 30px;
+    background-color: #E4FADF;
+    border-radius: 10px;
+    display: flex;
+}
+
+#bookImage {
+    margin-right: 30px;
+    width: 300px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.contain-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-name {}
+
+.previous-price {
+    color: blue;
+}
+
+.price {
+    color: blue;
+}
+
+.contain-buttons {}
+
+.fa-solid.fa-cart-shopping btn-hover {}
+
+.btnBuy {}

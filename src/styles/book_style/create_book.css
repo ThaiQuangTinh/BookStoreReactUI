@@ -1,0 +1,67 @@
+.contain-create-book-form {
+    margin: 30px 0;
+    padding: 20px;
+    width: 100%;
+    /* height: calc(100vh - 70px); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-book-form {
+    width: 60%;
+    padding: 20px;
+    border: 3px solid #5A9D49;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: #cccccc3b;
+}
+
+.input-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cb-form-title {
+    text-align: center;
+    font-size: 30px;
+    color: #5A9D49;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.input-list .contain-input-row:nth-child(even) {
+    margin-left: 100px;
+}
+
+.input-list .contain-input-row input {
+    min-width: 300px;
+}
+
+.input-list .contain-input-row input[type="file"] {
+    font-size: 12px;
+    background-color: #fff;
+}
+
+.contain-create-bool-button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#btnCreateBook {
+    padding: 10px 20px;
+    width: 400px;
+    border-radius: 10px;
+    border: none;
+    background-color: #5A9D49;
+    color: #fff;
+    font-size: 16px;
+}
+
+#btnCreateBook:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all linear 0.3s;
+}

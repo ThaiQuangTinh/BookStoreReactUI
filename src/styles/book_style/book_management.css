@@ -1,0 +1,85 @@
+.book-list-container {
+  margin: 20px auto;
+  height: 100vh;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.book-list-title {
+  text-align: center;
+  color: #5A9D49;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.book-list-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.book-list-table th, .book-list-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.book-list-table .th-description {
+  min-width: 320px;
+}
+
+.book-list-table .th-book-name {
+  min-width: 120px;
+}
+.book-list-table .th-previous-price {
+  min-width: 140px;
+  text-align: center;
+}
+
+.book-list-table th {
+  background-color: #5A9D49;
+  color: white;
+}
+
+.book-list-table td img {
+  max-width: 50px;
+  height: auto;
+}
+
+/* Styling for alternating rows */
+.even-row {
+  background-color: #F9F9F9;
+}
+
+.odd-row {
+  background-color: #E6E6E6;
+}
+
+/* Styling for buttons */
+.delete-button {
+  background-color: #F28B82;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #5A9D49;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover, .edit-button:hover {
+  opacity: 0.8;
+}
+
+/* Add table borders */
+.book-list-table th, .book-list-table td {
+  border: 1px solid #ddd;
+}
