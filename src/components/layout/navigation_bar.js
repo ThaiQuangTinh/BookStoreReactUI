@@ -48,10 +48,10 @@ function Navigation({ isLoggedIn, userName, role, handleLogout, onSearch }) {
                     <NavLink to="/" className={({ isActive }) => isActive ? 'admin-fe-link under-line-active' : 'admin-fe-link'} onClick={() => resetSearchQuery()}>
                         Home
                     </NavLink>
-                    <NavLink to="/book-management" className={({ isActive }) => isActive ? 'admin-fe-link under-line-active' : 'admin-fe-link'}>
+                    <NavLink to="/books/book-management" className={({ isActive }) => isActive ? 'admin-fe-link under-line-active' : 'admin-fe-link'}>
                         Book management
                     </NavLink>
-                    <NavLink to="/create-book" className={({ isActive }) => isActive ? 'admin-fe-link under-line-active' : 'admin-fe-link'}>
+                    <NavLink to="/books/create-book" className={({ isActive }) => isActive ? 'admin-fe-link under-line-active' : 'admin-fe-link'}>
                         Create book
                     </NavLink>
                     <div className='admin-fe-link' id='verticalLine'></div>
@@ -73,8 +73,8 @@ function Navigation({ isLoggedIn, userName, role, handleLogout, onSearch }) {
                     <div id='userNotLogin'>
                         {!['/login', '/sign-up'].includes(location.pathname) && (
                             <>
-                                <Link to="/login" className='nav-button' id='btnLogin'>Login</Link>
-                                <Link to="/sign-up" className='nav-button' id='btnSignUp'>Sign up</Link>
+                                <Link to="/users/login" className='nav-button' id='btnLogin'>Login</Link>
+                                <Link to="/users/sign-up" className='nav-button' id='btnSignUp'>Sign up</Link>
                             </>
                         )}
                     </div>

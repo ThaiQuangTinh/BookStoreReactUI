@@ -142,7 +142,7 @@ function SignUpComponent() {
 
                 <div className='contain-sub-form'>
                     <p className='sub-message'>Do you have an account?</p>
-                    <Link to="/login">Login</Link>
+                    <Link to="/users/login">Login</Link>
                 </div>
             </div>
         </div>

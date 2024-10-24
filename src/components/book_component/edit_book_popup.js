@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../../styles/book_style/edit_book_popup.css';
 import { useNavigate } from 'react-router-dom';
 
-const PopupComponent = ({ trigger, setTrigger, book, onUpdateSuccess }) => {
+const EditBookPopupComponent = ({ trigger, setTrigger, book, onUpdateSuccess }) => {
     const [formData, setFormData] = useState({
         title: '',
         author: '',
@@ -80,7 +80,7 @@ const PopupComponent = ({ trigger, setTrigger, book, onUpdateSuccess }) => {
 
             const updatedBook = await response.json();
             onUpdateSuccess();
-            navigate('/book-management');
+            navigate('/books/book-management');
             handleClose();
         } catch (error) {
             console.error(error.message);
@@ -147,4 +147,4 @@ const PopupComponent = ({ trigger, setTrigger, book, onUpdateSuccess }) => {
     ) : null;
 };
 
-export default PopupComponent;
+export default EditBookPopupComponent;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/book_style/book_management.css';
-import PopupComponent from './edit_book_popup';
+import EditBookPopupComponent from './edit_book_popup';
 
 function BookManagementComponent() {
     const [popupTrigger, setPopupTrigger] = useState(false);
@@ -103,7 +103,7 @@ function BookManagementComponent() {
                 </tbody>
             </table>
 
-            <PopupComponent
+            <EditBookPopupComponent
                 trigger={popupTrigger}
                 setTrigger={setPopupTrigger}
                 book={selectedBook}

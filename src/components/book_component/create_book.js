@@ -57,7 +57,7 @@ function CreateBookComponent() {
             const result = await response.json();
             if (response.ok) {
                 // alert('Book created successfully');
-                navigate('/book-management');
+                navigate('/books/book-management');
             } else {
                 setErrorMessage(result.message || 'Failed to create book');
             }

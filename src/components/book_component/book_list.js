@@ -7,34 +7,34 @@ function BookListComponent({ searchQuery }) {
     const [books, setBooks] = useState([]);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchBooks = async () => {
-            try {
-                const endpoint = searchQuery ? `http://localhost:8200/books/get-by-title?title=${searchQuery}` : 'http://localhost:8200/books/getall';
+    const fetchBooks = async () => {
+        try {
+            const endpoint = searchQuery ? `http://localhost:8200/books/get-by-title?title=${searchQuery}` : 'http://localhost:8200/books/getall';
 
-                const response = await fetch(endpoint, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                });
+            const response = await fetch(endpoint, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
 
-                if (!response.ok) {
-                    throw new Error('Failed to fetch books');
-                }
-
-                const data = await response.json();
-                setBooks(data); // Save data to state
-            } catch (error) {
-                setError(error.message); 
+            if (!response.ok) {
+                throw new Error('Failed to fetch books');
             }
-        };
 
+            const data = await response.json();
+            setBooks(data); // Save data to state
+        } catch (error) {
+            setError(error.message); 
+        }
+    };
+
+    useEffect(() => {
         fetchBooks(); 
     }, [searchQuery]);
 
     const handleBookClick = (bookId) => {
-        navigate(`/book-details/${bookId}`);
+        navigate(`/books/book-details/${bookId}`);
     };
 
     return (

@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import '../../styles/user_style/user_form.css';
+import { AuthContext } from '../../context/AuthContext';
 
-function LoginComponent({ setIsLoggedIn, setUserName, setRole }) {
+function LoginComponent() {
+    const { setIsLoggedIn, setUserName, setRole } = useContext(AuthContext);
     // State list
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
