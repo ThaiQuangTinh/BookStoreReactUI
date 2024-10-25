@@ -8,27 +8,27 @@ function BookDetailsComponent() {
     const [book, setBook] = useState(null); // State để lưu trữ dữ liệu sách
     const [error, setError] = useState(null); // State để lưu thông báo lỗi
 
-    useEffect(() => {
-        const fetchBookDetails = async () => {
-            try {
-                const response = await fetch(`http://localhost:8200/books/get-by-id?id=${id}`, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (!response.ok) {
-                    throw new Error('Failed to fetch book details');
+    const fetchBookDetails = async () => {
+        try {
+            const response = await fetch(`http://localhost:8200/books/get-by-id?id=${id}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
                 }
+            });
 
-                const data = await response.json();
-                setBook(data);
-            } catch (error) {
-                setError(error.message);
+            if (!response.ok) {
+                throw new Error('Failed to fetch book details');
             }
-        };
 
+            const data = await response.json();
+            setBook(data);
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+    
+    useEffect(() => {
         fetchBookDetails();
     }, [id]);
 

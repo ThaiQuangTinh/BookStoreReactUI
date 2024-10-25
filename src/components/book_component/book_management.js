@@ -5,33 +5,33 @@ import EditBookPopupComponent from './edit_book_popup';
 function BookManagementComponent() {
     const [popupTrigger, setPopupTrigger] = useState(false);
     const [selectedBook, setSelectedBook] = useState(null);
-    const [books, setBooks] = useState([]); 
-    const [error, setError] = useState(null); 
+    const [books, setBooks] = useState([]);
+    const [error, setError] = useState(null);
     const [refresh, setRefresh] = useState(0);
 
-    useEffect(() => {
-        const fetchBooks = async () => {
-            try {
-                const response = await fetch('http://localhost:8200/books/getall', {
-                    method: 'GET',
-                    headers: {
-                        Authorization: `Bearer ${localStorage.getItem('token')}`,
-                    },
-                });
+    const fetchBooks = async () => {
+        try {
+            const response = await fetch('http://localhost:8200/books/getall', {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            });
 
-                if (!response.ok) {
-                    throw new Error('Failed to fetch books');
-                }
-
-                const data = await response.json();
-                setBooks(data);
-            } catch (error) {
-                setError(error.message); 
+            if (!response.ok) {
+                throw new Error('Failed to fetch books');
             }
-        };
 
-        fetchBooks(); 
-    }, [refresh]); 
+            const data = await response.json();
+            setBooks(data);
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
+    useEffect(() => {
+        fetchBooks();
+    }, [refresh]);
 
     const handleEditClick = (book) => {
         setSelectedBook(book);
@@ -45,9 +45,9 @@ function BookManagementComponent() {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
-                        Authorization: `Bearer ${localStorage.getItem('token')}`, 
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },
-                    body: JSON.stringify({ id }), 
+                    body: JSON.stringify({ id }),
                 });
 
                 if (!response.ok) {
@@ -57,7 +57,7 @@ function BookManagementComponent() {
                 // Refresh list
                 setRefresh(prev => prev + 1);
             } catch (error) {
-                setError(error.message); 
+                setError(error.message);
             }
         }
     };
@@ -108,7 +108,7 @@ function BookManagementComponent() {
                 setTrigger={setPopupTrigger}
                 book={selectedBook}
                 onUpdateSuccess={() => {
-                    setRefresh(prev => prev + 1); 
+                    setRefresh(prev => prev + 1);
                 }}
             />
         </div>
