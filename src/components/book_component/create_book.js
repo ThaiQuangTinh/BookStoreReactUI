@@ -28,7 +28,7 @@ function CreateBookComponent() {
 
         const formData = new FormData();
         formData.append('title', bookName);
-        formData.append('genre', JSON.stringify(genre)); // Chuyển đổi genre thành chuỗi JSON
+        formData.append('genre', JSON.stringify(genre)); 
         formData.append('author', author);
         formData.append('description', description);
         formData.append('publisher', publisher);

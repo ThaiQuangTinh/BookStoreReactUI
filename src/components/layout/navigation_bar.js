@@ -1,7 +1,9 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
-function Navigation({ isLoggedIn, userName, role, handleLogout, onSearch }) {
+function NavigationBar({handleLogout, onSearch }) {
+    const {isLoggedIn, userName, role} = useContext(AuthContext);
     const location = useLocation();
     const [searchQuery, setSearchQuery] = useState(''); 
 
@@ -84,4 +86,4 @@ function Navigation({ isLoggedIn, userName, role, handleLogout, onSearch }) {
     );
 }
 
-export default Navigation;
+export default NavigationBar;

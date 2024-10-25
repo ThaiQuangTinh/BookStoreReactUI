@@ -9,7 +9,8 @@ function BookListComponent({ searchQuery }) {
 
     const fetchBooks = async () => {
         try {
-            const endpoint = searchQuery ? `http://localhost:8200/books/get-by-title?title=${searchQuery}` : 'http://localhost:8200/books/getall';
+            const endpoint = searchQuery ? `http://localhost:8200/books/get-by-title?title=${searchQuery}`
+                : 'http://localhost:8200/books/getall';
 
             const response = await fetch(endpoint, {
                 method: 'GET',
@@ -25,12 +26,12 @@ function BookListComponent({ searchQuery }) {
             const data = await response.json();
             setBooks(data); // Save data to state
         } catch (error) {
-            setError(error.message); 
+            setError(error.message);
         }
     };
 
     useEffect(() => {
-        fetchBooks(); 
+        fetchBooks();
     }, [searchQuery]);
 
     const handleBookClick = (bookId) => {
